@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ "$AWS_PROFILE" = "" ]; then
+    echo "AWS_PROFILE is not set."
+    exit 1
+fi
+export AWS_REGION=eu-central-1
+export AWS_DEFAULT_REGION=eu-central-1
+export TF_VAR_management_key_pair=tf-import-test
+export TF_VAR_platform_name=tf-import-test
+export TF_VAR_platform_dns_domain=tf-import-test.example.zz
+#export TF_LOG=TRACE
+
+terraform -chdir=tf $*
+exit $?

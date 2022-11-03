@@ -1,0 +1,5 @@
+tf/.terraform*
+debuglog.txt
+tf-import-test.pem
+zone-id.txt
+create-hosted-zone-result.json
